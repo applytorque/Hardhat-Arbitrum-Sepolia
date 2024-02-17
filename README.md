@@ -38,6 +38,11 @@ Below is a list of commands you can run from the terminal:
   npx hardhat test
   ```
 
+ **Compile**: Run the test cases.
+  ```shell
+  npx hardhat compile
+  ```
+
 - **Test with Gas Reporting**: Run tests displaying gas usage.
   ```shell
   REPORT_GAS=true npx hardhat test
