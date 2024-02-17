@@ -2,7 +2,7 @@ For a GitHub project README, you'll want to ensure that it's clear, concise, and
 
 ---
 
-# Sample Hardhat Project for Arbitrum Sepolia
+# Hardhat Project for Arbitrum Sepolia
 
 ## Overview
 
