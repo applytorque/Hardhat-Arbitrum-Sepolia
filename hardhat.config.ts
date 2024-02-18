@@ -8,7 +8,7 @@ module.exports = {
   networks: {
     hardhat: {},
     arbitrum_sepolia: {
-      url: "https://arb-sepolia.g.alchemy.com/v2/E0WpAUZ9TFnNsOe4MD0ccbFeDz1BXVyO",
+      url: "https://arb-sepolia.g.alchemy.com/v2/<Alchemy_Key>",
       accounts: { mnemonic: mnemonic },
       gasPrice: 0,
       gas: 8000000,
@@ -26,7 +26,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      sepolia: "JV9C6IEY1FRC6QHJ77175QDDCP4NAWYQE7"
+      sepolia: "<Etherscan_ApiKey>"
     },
     customChains: [
       {
