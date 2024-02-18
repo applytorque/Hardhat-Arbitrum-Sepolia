@@ -60,12 +60,12 @@ Below is a list of commands you can run from the terminal:
 
 - **Deploy Contract to Sepolia Arbitrum (JavaScript)**: Deploy contracts to the Sepolia Arbitrum network.
   ```shell
-  npx hardhat run scripts/deploy.js --network sepolia_Arbitrum
+  npx hardhat run scripts/deploy.js --network arbitrum_sepolia
   ```
 
 - **Verify Contract**: Verify the deployed contract on Sepolia Arbitrum.
   ```shell
-  npx hardhat verify --network sepoliaArbitrum DEPLOYED_CONTRACT_ADDRESS
+  npx hardhat verify --network arbitrum_sepolia DEPLOYED_CONTRACT_ADDRESS
   ```
 
   Replace `DEPLOYED_CONTRACT_ADDRESS` with the actual address of your deployed contract.
