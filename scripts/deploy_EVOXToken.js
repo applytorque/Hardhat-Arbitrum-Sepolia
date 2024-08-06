@@ -1,18 +1,20 @@
+const { ethers, upgrades } = require("hardhat");
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const EQXToken = await ethers.getContractFactory("MetaVault");
+  const proxy = await upgrades.deployProxy(
+    EQXToken,
+    ["METAVAULT", "MV", 18, 0, 100000000, 10000000],
+    { gasLimit: "90000000" }
+  );
+  await proxy.deployed();
 
-  console.log("Deploying contracts with the account:", deployer.address);
-
-  const EVOXToken = await ethers.getContractFactory("EVOXToken");
-  const evoxToken = await EVOXToken.deploy();
-
-  console.log("EVOXToken deployed to:", evoxToken.address);
+  console.log(proxy.address);
+  console.log("Metavault contract:", proxy.address);
+  await hre.run("verify:verify", {
+    address: proxy.address,
+    constructorArguments: [],
+  });
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+main();
