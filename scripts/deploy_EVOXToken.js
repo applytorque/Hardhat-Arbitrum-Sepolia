@@ -1,4 +1,3 @@
-import { ethers, upgrades } from "hardhat";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -6,14 +5,9 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const EVOXToken = await ethers.getContractFactory("EVOXToken");
-  
-  const evoxToken = await upgrades.deployProxy(EVOXToken, [], { 
-    initializer: 'initialize',
-    kind: 'uups'
-  });
+  const evoxToken = await EVOXToken.deploy();
 
-  await evoxToken.waitForDeployment();
-  console.log("EVOXToken deployed to:", await evoxToken.getAddress());
+  console.log("EVOXToken deployed to:", evoxToken.address);
 }
 
 main()
